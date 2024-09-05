@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=4 uid="uid://dfh22nj4ntnlk"]
+
+[ext_resource type="Texture2D" uid="uid://dlb1xqxvktt4d" path="res://Assets/Sprite-0002.png" id="1_cgi8f"]
+[ext_resource type="Script" path="res://Scripts/Mouse.gd" id="1_jd1jn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f024y"]
+texture = ExtResource("1_cgi8f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1pisn"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_f024y")
+
+[node name="Main" type="Node2D"]
+position = Vector2(-1, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, 7)
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("1_jd1jn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(17, 6)
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1pisn")
